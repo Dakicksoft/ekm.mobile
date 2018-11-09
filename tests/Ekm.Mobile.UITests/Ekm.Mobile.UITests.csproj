@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net461</TargetFramework>
+    <OutputType>Library</OutputType>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="System" />
+    <PackageReference Include="NUnit" Version="2.7.0" />
+    <PackageReference Include="Xamarin.UITest" Version="2.2.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Ekm.Mobile.iOS\Ekm.Mobile.iOS.csproj">
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Ekm.Mobile.Droid\Ekm.Mobile.Droid.csproj">
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+
+  <Target Name="CopyUITestTools" AfterTargets="CoreCompile">
+    <ItemGroup>
+      <UITestTools Include="$(NuGetPackageRoot)xamarin.uitest\2.2.6\tools\**" />
+    </ItemGroup>
+    <Copy SourceFiles="@(UITestTools)" DestinationFolder="$(OutputPath)\tools" ContinueOnError="true" />
+  </Target>
+
+</Project>
