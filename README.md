@@ -1,7 +1,6 @@
 # Ekm.Mobile
 
-This project was created using the Prism QuickStart Templates by Dan Siegel. Be sure
-to follow Dan on Twitter @DanJSiegel.
+
 
 ## Developer Notes
 
