@@ -1,6 +1,7 @@
 # Ekm.Mobile
 
-
+Before start using app you have to create Ekm account. 
+Than you should follow these steps https://api.ekm.net/v1/documentation#
 
 ## Developer Notes
 
@@ -85,3 +86,9 @@ will only copy Manifests when building a Platform target such as iOS, Android, U
 If the build definition builds more than one platform target, any variables that 
 should be different from one platform to the next should use platform specific
 tokens within the manifest.
+
+
+
+#### Contributions Welcome
+
+CONTRIBUTIONS ARE WELCOME HERE TOO!
