@@ -223,8 +223,11 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="BarcodeScanning.Service">
+      <Version>1.0.0.140</Version>
+    </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>11.0.2</Version>
+      <Version>12.0.1</Version>
     </PackageReference>
     <PackageReference Include="PropertyChanged.Fody" Version="2.6.0" PrivateAssets="all" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="7.1.0.431" />
@@ -232,12 +235,14 @@
     <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
     <PackageReference Include="Xamarin.Essentials" Version="0.11.0-preview" />
     <PackageReference Include="Xamarin.TestCloud.Agent" Version="0.21.7" />
-    <PackageReference Include="BarcodeScanning.Service" Version="1.0.0.140" />
     <PackageReference Include="SQLitePCLRaw.bundle_sqlcipher" Version="1.1.11" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.4.859" />
     <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.4.859" />
     <PackageReference Include="Mobile.BuildTools" Version="1.4.0.638" PrivateAssets="all" />
     <PackageReference Include="Prism.QuickStart.MFractor.Config" Version="1.0.3" PrivateAssets="all" />
+    <PackageReference Include="ZXing.Net.Mobile">
+      <Version>2.4.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ekm.Mobile\Ekm.Mobile.csproj">

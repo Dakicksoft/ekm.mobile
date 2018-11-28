@@ -56,13 +56,14 @@ namespace Ekm.Mobile.Services.Authentication
 
             dynamic data = JsonConvert.DeserializeObject(serialized);
 
-            return new Auth
-            {
-                AccessToken = data.access_token,
-                ExpiresIn = data.expires_in,
-                TokenType = data.token_type,
-                RefreshToken = data.refresh_token
-            };
+            return null;
+            //return new Auth
+            //{
+            //    AccessToken = data.access_token,
+            //    ExpiresIn = data.expires_in,
+            //    TokenType = data.token_type,
+            //    RefreshToken = data.refresh_token
+            //};
         }
 
         private async Task HandleResponse(HttpResponseMessage response)

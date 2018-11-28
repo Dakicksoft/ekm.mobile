@@ -1,14 +1,6 @@
-﻿using System;
-using Android.App;
-using Android.Content;
+﻿using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
-using Ekm.Mobile.Helpers;
-using Xamarin.Forms.Platform.Android;
-using ZXing.Net;
 
 namespace Ekm.Mobile.Droid
 {
@@ -16,7 +8,7 @@ namespace Ekm.Mobile.Droid
               Icon = "@mipmap/ic_launcher",
               Theme = "@style/MyTheme",
               ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : FormsAppCompatActivity
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -32,6 +24,7 @@ namespace Ekm.Mobile.Droid
             global::FFImageLoading.ImageService.Instance.Initialize();
             SQLitePCL.Batteries_V2.Init();
             SQLitePCL.raw.FreezeProvider();
+
             global::ZXing.Net.Mobile.Forms.Android.Platform.Init();
 
             LoadApplication(new App(new AndroidInitializer()));
@@ -40,7 +33,12 @@ namespace Ekm.Mobile.Droid
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions,
                                                         Permission[] grantResults)
         {
-            global::ZXing.Net.Mobile.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+         
+            global::ZXing.Net.Mobile
+                      .Android
+                      .PermissionsHandler
+                      .OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 }

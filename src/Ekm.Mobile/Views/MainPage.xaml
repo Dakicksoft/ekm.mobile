@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:behaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms" xmlns:i18n="clr-namespace:Ekm.Mobile.i18n;assembly=Ekm.Mobile" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core" xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core" Title="{Binding Title}" x:Class="Ekm.Mobile.Views.MainPage">
-    <!-- TODO: // Add Some Content -->
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+  x:Class="Ekm.Mobile.Views.MainPage"
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+  xmlns:behaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+  xmlns:i18n="clr-namespace:Ekm.Mobile.i18n;assembly=Ekm.Mobile"
+  xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+  xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core"
+  Title="{Binding Title}">
+  <StackLayout Margin="0">
+    <!--  WebView needs to be given height and width request within layouts to render.  -->
+    <WebView
+      x:Name="TheWebView"
+      HorizontalOptions="FillAndExpand"
+      VerticalOptions="FillAndExpand" />
+  </StackLayout>
 </ContentPage>

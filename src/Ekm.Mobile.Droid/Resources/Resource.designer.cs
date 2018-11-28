@@ -27,7 +27,12 @@ namespace Ekm.Mobile.Droid
 		public static void UpdateIdValues()
 		{
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::Ekm.Mobile.Droid.Resource.Attribute.actionBarSize;
+			global::ZXing.Net.Mobile.Forms.Android.Resource.Layout.zxingscanneractivitylayout = global::Ekm.Mobile.Droid.Resource.Layout.zxingscanneractivitylayout;
+			global::ZXing.Net.Mobile.Forms.Android.Resource.Layout.zxingscannerfragmentlayout = global::Ekm.Mobile.Droid.Resource.Layout.zxingscannerfragmentlayout;
 			global::ZXing.Net.Mobile.Forms.Android.Resource.String.library_name = global::Ekm.Mobile.Droid.Resource.String.library_name;
+			global::ZXing.Mobile.Resource.Id.contentFrame = global::Ekm.Mobile.Droid.Resource.Id.contentFrame;
+			global::ZXing.Mobile.Resource.Layout.zxingscanneractivitylayout = global::Ekm.Mobile.Droid.Resource.Layout.zxingscanneractivitylayout;
+			global::ZXing.Mobile.Resource.Layout.zxingscannerfragmentlayout = global::Ekm.Mobile.Droid.Resource.Layout.zxingscannerfragmentlayout;
 		}
 		
 		public partial class Animation
@@ -3193,6 +3198,9 @@ namespace Ekm.Mobile.Droid
 			// aapt resource value: 0x7f0a008d
 			public const int container = 2131361933;
 			
+			// aapt resource value: 0x7f0a00c9
+			public const int contentFrame = 2131361993;
+			
 			// aapt resource value: 0x7f0a0066
 			public const int contentPanel = 2131361894;
 			
@@ -3316,8 +3324,8 @@ namespace Ekm.Mobile.Droid
 			// aapt resource value: 0x7f0a0061
 			public const int list_item = 2131361889;
 			
-			// aapt resource value: 0x7f0a00ca
-			public const int masked = 2131361994;
+			// aapt resource value: 0x7f0a00cb
+			public const int masked = 2131361995;
 			
 			// aapt resource value: 0x7f0a00b9
 			public const int media_actions = 2131361977;
@@ -3652,8 +3660,8 @@ namespace Ekm.Mobile.Droid
 			// aapt resource value: 0x7f0a0016
 			public const int view_offset_helper = 2131361814;
 			
-			// aapt resource value: 0x7f0a00c9
-			public const int visible = 2131361993;
+			// aapt resource value: 0x7f0a00ca
+			public const int visible = 2131361994;
 			
 			// aapt resource value: 0x7f0a00ab
 			public const int volume_item_container = 2131361963;
@@ -3954,6 +3962,12 @@ namespace Ekm.Mobile.Droid
 			
 			// aapt resource value: 0x7f040044
 			public const int tooltip = 2130968644;
+			
+			// aapt resource value: 0x7f040045
+			public const int zxingscanneractivitylayout = 2130968645;
+			
+			// aapt resource value: 0x7f040046
+			public const int zxingscannerfragmentlayout = 2130968646;
 			
 			static Layout()
 			{

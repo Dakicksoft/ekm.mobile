@@ -1,19 +1,14 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using BarcodeScanner;
+using DryIoc;
 using Ekm.Mobile.Resources;
 using Ekm.Mobile.Services;
 using Ekm.Mobile.Views;
 using Plugin.Multilingual;
 using Prism;
 using Prism.Ioc;
-using Prism.Plugin.Popups;
-using DryIoc;
-using Prism.DryIoc;
-using FFImageLoading.Helpers;
-using Rg.Plugins.Popup.Contracts;
-using Rg.Plugins.Popup.Services;
-using BarcodeScanner;
 using Prism.Logging;
+using Prism.Plugin.Popups;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
