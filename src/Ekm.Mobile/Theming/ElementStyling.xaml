@@ -6,13 +6,32 @@
   xmlns:theming="clr-namespace:Ekm.Mobile.Theming">
   <ResourceDictionary.MergedDictionaries>
     <theming:ColorPalette />
+    <theming:ElementSize />
   </ResourceDictionary.MergedDictionaries>
+
+  <!--  TARGET TYPE: NavigationPage  -->
   <Style ApplyToDerivedTypes="true" TargetType="NavigationPage">
     <Setter Property="BarTextColor" Value="{StaticResource NavigationText}" />
     <Setter Property="BarBackgroundColor" Value="{StaticResource PrimaryDark}" />
   </Style>
+
+  <!--  TARGET TYPE: TabbedPage  -->
   <Style ApplyToDerivedTypes="true" TargetType="TabbedPage">
     <Setter Property="BarTextColor" Value="{StaticResource NavigationText}" />
     <Setter Property="BarBackgroundColor" Value="{StaticResource PrimaryDark}" />
   </Style>
+
+  <!--  TARGET TYPE: Button  -->
+  <Style
+    x:Key="PrimaryActionButtonStyle"
+    ApplyToDerivedTypes="true"
+    TargetType="Button">
+    <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+    <Setter Property="TextColor" Value="White" />
+    <Setter Property="FontSize" Value="{StaticResource BaseFontSize}" />
+    <Setter Property="BorderRadius" Value="0" />
+    <Setter Property="HeightRequest" Value="{StaticResource BaseButtonHeight}" />
+  </Style>
+
+
 </ResourceDictionary>

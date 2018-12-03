@@ -1,12 +1,23 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:prism="clr-namespace:Prism.DryIoc;assembly=Prism.DryIoc.Forms" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core" xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core" xmlns:styling="using:Ekm.Mobile.Theming" x:Class="Ekm.Mobile.App">
-    <prism:PrismApplication.Resources>
-        <!-- Application resource dictionary -->
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <styling:ColorPalette />
-                <styling:ElementStyling />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </prism:PrismApplication.Resources>
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<prism:PrismApplication
+  x:Class="Ekm.Mobile.App"
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+  xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+  xmlns:prism="clr-namespace:Prism.DryIoc;assembly=Prism.DryIoc.Forms"
+  xmlns:styling="using:Ekm.Mobile.Theming"
+  xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core">
+  <prism:PrismApplication.Resources>
+    <!--  Application resource dictionary  -->
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <styling:ColorPalette />
+        <styling:ElementStyling />
+        <styling:ElementSize />
+      </ResourceDictionary.MergedDictionaries>
+
+
+    </ResourceDictionary>
+  </prism:PrismApplication.Resources>
 </prism:PrismApplication>

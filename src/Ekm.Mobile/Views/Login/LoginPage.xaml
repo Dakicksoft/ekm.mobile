@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseContentPage
+  x:Class="Ekm.Mobile.Views.LoginPage"
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+  xmlns:views="clr-namespace:Ekm.Mobile.Views"
+  Title="Login"
+  prism:ViewModelLocator.AutowireViewModel="True"
+  BackgroundColor="WhiteSmoke">
+  <ContentPage.Content>
+    <ScrollView BackgroundColor="Transparent">
+
+      <StackLayout
+        Padding="20,10,20,10"
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="CenterAndExpand">
+
+        <!--<Entry
+          Keyboard="Email"
+          Placeholder="User name"
+          Style="{StaticResource entryStyle}"
+          Text="{Binding UserName}" />
+
+        <Entry
+          IsPassword="true"
+          Placeholder="Password"
+          Style="{StaticResource entryStyle}"
+          Text="{Binding Password}" />-->
+
+        <Button
+          Style="{StaticResource PrimaryActionButtonStyle}"
+          Text="Sign In"
+          VerticalOptions="Center" />
+
+        <ActivityIndicator
+          IsRunning="True"
+          IsVisible="true"
+          VerticalOptions="Center" />
+
+      </StackLayout>
+
+    </ScrollView>
+  </ContentPage.Content>
+</views:BaseContentPage>

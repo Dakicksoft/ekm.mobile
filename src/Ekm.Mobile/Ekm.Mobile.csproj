@@ -29,4 +29,31 @@
     <Compile Update="Resources\AppResources.Designer.cs" DesignTime="true" AutoGen="true" DependentUpon="AppResources.resx" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Update="Theming\ElementSize.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Login\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Theming\ColorPalette.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Theming\ElementStyling.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Login\LoginPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\SplashScreenPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+
 </Project>
