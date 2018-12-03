@@ -87,7 +87,7 @@ If the build definition builds more than one platform target, any variables that
 should be different from one platform to the next should use platform specific
 tokens within the manifest.
 
-
+https://dev.azure.com/dakicksoft/ekm
 
 #### Contributions Welcome
 
