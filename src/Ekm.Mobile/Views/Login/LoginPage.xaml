@@ -29,6 +29,7 @@
           Text="{Binding Password}" />-->
 
         <Button
+          Command="{Binding SignInCommand}"
           Style="{StaticResource PrimaryActionButtonStyle}"
           Text="Sign In"
           VerticalOptions="Center" />

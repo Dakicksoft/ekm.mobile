@@ -1,10 +1,14 @@
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
 namespace Ekm.Mobile.Views
 {
-  public partial class SplashScreenPage
-  {
-    public SplashScreenPage()
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class SplashScreenPage:ContentPage
     {
-      InitializeComponent();
+        public SplashScreenPage()
+        {
+            InitializeComponent();
+        }
     }
-  }
 }

@@ -8,5 +8,6 @@ namespace Ekm.Mobile
     {
         public static readonly string SplashScreenPage = nameof(Views.SplashScreenPage); 
         public static readonly string LoginPage = nameof(Views.LoginPage);
+        public static readonly string WebPage = nameof(Views.WebPage);
     }
 }

@@ -7,12 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BarcodeScanning.Service" Version="1.0.0.140" />
+    <PackageReference Include="BarcodeScanning.Service" Version="1.1.0.286" />
     <PackageReference Include="Microsoft.Rest.ClientRuntime" Version="2.3.18" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
     <PackageReference Include="PropertyChanged.Fody" Version="2.6.0" PrivateAssets="all" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="7.1.0.431" />
-    <PackageReference Include="Prism.Plugin.Popups" Version="2.1.0.228" />
+    <PackageReference Include="Prism.Plugin.Popups" Version="2.2.0.293" />
     <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
     <PackageReference Include="Xamarin.Essentials" Version="0.11.0-preview" />
     <PackageReference Include="Plugin.Multilingual" Version="1.0.2" />
@@ -36,6 +36,9 @@
     <EmbeddedResource Update="Views\Login\LoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\WebPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
@@ -54,6 +57,10 @@
     <None Update="Views\SplashScreenPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Authentication\" />
   </ItemGroup>
 
 </Project>

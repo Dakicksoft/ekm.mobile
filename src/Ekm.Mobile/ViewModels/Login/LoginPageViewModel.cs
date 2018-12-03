@@ -13,5 +13,7 @@ namespace Ekm.Mobile.ViewModels
         public LoginPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService, IDeviceService deviceService) : base(navigationService, pageDialogService, deviceService)
         {
         }
+        public DelegateCommand SignInCommand => new DelegateCommand(async () => await base._navigationService.NavigateAsync(Screens.WebPage,useModalNavigation:true));
+
     }
 }

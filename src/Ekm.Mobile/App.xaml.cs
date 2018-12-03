@@ -71,6 +71,7 @@ namespace Ekm.Mobile
             containerRegistry.RegisterForNavigation<MainPage>();
             containerRegistry.RegisterForNavigation<SplashScreenPage>();
             containerRegistry.RegisterForNavigation<LoginPage>();
+            containerRegistry.RegisterForNavigation<WebPage>();
         }
 
         protected override void OnStart()
