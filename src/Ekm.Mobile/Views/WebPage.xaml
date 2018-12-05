@@ -5,24 +5,24 @@
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
   xmlns:controls="clr-namespace:Ekm.Mobile.Controls"
   xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+  xmlns:prismNav="clr-namespace:Prism.Navigation.Xaml;assembly=Prism.Forms"
   prism:ViewModelLocator.AutowireViewModel="True">
+
   <ContentPage.Content>
     <StackLayout>
 
-      <Image
+      <ImageButton
         Margin="0,20,20,0"
+        Command="{prismNav:GoBack}"
         HeightRequest="24"
         HorizontalOptions="End"
         Source="close_circle"
         VerticalOptions="Start"
-        WidthRequest="24">
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Command="{Binding CancelCommand}" NumberOfTapsRequired="1" />
-        </Image.GestureRecognizers>
-      </Image>
+        WidthRequest="24" />
 
       <controls:ExtendedWebView
         HorizontalOptions="FillAndExpand"
+        NavigatingCommand="{Binding NavigatingCommand}"
         Source="{Binding Url}"
         VerticalOptions="FillAndExpand" />
 

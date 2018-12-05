@@ -18,7 +18,6 @@ namespace Ekm.Mobile.Views
 
             TheWebView.Navigating += async (sender, args) => {
               //  args.Cancel = true; // prevents the webview navigation from handling
-
                 System.Diagnostics.Debug.WriteLine("Received");
             };
 

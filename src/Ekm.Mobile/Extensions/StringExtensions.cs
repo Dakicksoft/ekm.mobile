@@ -160,7 +160,7 @@ namespace Ekm.Mobile.Extensions
 
     public static string ToConcatenatedString<T>(this IEnumerable<T> values, Func<T, string> stringSelector)
     {
-      return values.ToConcatenatedString(stringSelector, String.Empty);
+      return values.ToConcatenatedString(stringSelector, string.Empty);
     }
 
     public static string ToConcatenatedString<T>(this IEnumerable<T> values, Func<T, string> action, string separator)
