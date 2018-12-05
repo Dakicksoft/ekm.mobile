@@ -92,3 +92,9 @@ https://dev.azure.com/dakicksoft/ekm
 #### Contributions Welcome
 
 CONTRIBUTIONS ARE WELCOME HERE TOO!
+
+<a class="btn btn-success btn-sm mb-3 mb-md-0" target="_blank" href="https://www.buymeacoffee.com/muhammetsahin">
+                                <i class="far fa-coffee"></i>
+                                Buy me a coffee
+                            </a>
+
