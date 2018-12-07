@@ -13,6 +13,7 @@
 
       <ImageButton
         Margin="0,20,20,0"
+        BackgroundColor="White"
         Command="{prismNav:GoBack}"
         HeightRequest="24"
         HorizontalOptions="End"
