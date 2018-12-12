@@ -20,7 +20,7 @@
     <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.4.859" />
     <PackageReference Include="Mobile.BuildTools" Version="1.4.0.638" PrivateAssets="all" />
     <PackageReference Include="Prism.QuickStart.MFractor.Config" Version="1.0.3" PrivateAssets="all" />
-    <PackageReference Include="LiveXAML" Version="2.1.50" />
+    <PackageReference Include="LiveXAML" Version="2.1.57" />
     <PackageReference Include="SQLitePCLRaw.bundle_sqlcipher" Version="1.1.11" />
   </ItemGroup>
 

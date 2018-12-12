@@ -9,17 +9,7 @@
   prism:ViewModelLocator.AutowireViewModel="True">
 
   <ContentPage.Content>
-    <StackLayout>
-
-      <ImageButton
-        Margin="0,20,20,0"
-        BackgroundColor="White"
-        Command="{prismNav:GoBack}"
-        HeightRequest="24"
-        HorizontalOptions="End"
-        Source="close_circle"
-        VerticalOptions="Start"
-        WidthRequest="24" />
+    <Grid BackgroundColor="#000000">
 
       <controls:ExtendedWebView
         HorizontalOptions="FillAndExpand"
@@ -27,6 +17,17 @@
         Source="{Binding Url}"
         VerticalOptions="FillAndExpand" />
 
-    </StackLayout>
+      <!--  CLOSE ICON  -->
+      <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,30,30" HorizontalOptions="End">
+        <ImageButton
+          Margin="0,20,20,0"
+          Command="{prismNav:GoBack}"
+          HeightRequest="30"
+          HorizontalOptions="End"
+          Source="close_circle"
+          VerticalOptions="Start"
+          WidthRequest="30" />
+      </AbsoluteLayout>
+    </Grid>
   </ContentPage.Content>
 </ContentPage>
