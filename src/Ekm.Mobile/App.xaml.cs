@@ -72,9 +72,9 @@ namespace Ekm.Mobile
             containerRegistry.RegisterForNavigation<TabbedPage>();
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage>();
-            //containerRegistry.RegisterForNavigation<SplashScreenPage>();
             containerRegistry.RegisterForNavigation<LoginPage>();
             containerRegistry.RegisterForNavigation<WebPage>();
+            containerRegistry.RegisterForNavigation<SplashScreenPage>();
         }
 
         protected override void OnStart()

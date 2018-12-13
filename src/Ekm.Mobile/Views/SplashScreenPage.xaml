@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+  x:Class="Ekm.Mobile.Views.SplashScreenPage"
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+  xmlns:i18n="clr-namespace:Ekm.Mobile.i18n;assembly=Ekm.Mobile"
+  xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+  prism:ViewModelLocator.AutowireViewModel="True"
+  BackgroundColor="White">
+  <ContentPage.Content>
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+      <Image
+        Aspect="AspectFit"
+        HeightRequest="100"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        WidthRequest="100">
+        <Image.Source>
+          <OnPlatform
+            x:TypeArguments="ImageSource"
+            Android="launchscreen_icon.png"
+            iOS="AppIcon.png" />
+        </Image.Source>
+      </Image>
+      <ActivityIndicator
+        HorizontalOptions="Center"
+        IsRunning="True"
+        Color="{StaticResource Accent}" />
+      <Label
+        HorizontalOptions="Center"
+        Text="{i18n:Translate LoadingText}"
+        TextColor="{StaticResource Accent}" />
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

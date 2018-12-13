@@ -31,9 +31,7 @@
               Android="launchscreen_icon.png"
               iOS="AppIcon.png" />
           </ffimageloading:CachedImage.Source>
-          <ffimageloading:CachedImage.Transformations>
-            <fftransformations:CircleTransformation />
-          </ffimageloading:CachedImage.Transformations>
+
         </ffimageloading:CachedImage>
 
         <Button
