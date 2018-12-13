@@ -62,6 +62,9 @@ namespace Ekm.Mobile
 
             containerRegistry.RegisterSingleton<Services.RequestProvider.IRequestProvider, Services.RequestProvider.RequestProvider>();
 
+            containerRegistry.RegisterInstance<Prism.Events.IEventAggregator>(new Prism.Events.EventAggregator());
+
+            containerRegistry.RegisterSingleton<Services.Dialog.IDialogService, Services.Dialog.DialogService>();
 
             // Navigating to "TabbedPage?createTab=ViewA&createTab=ViewB&createTab=ViewC will generate a TabbedPage
             // with three tabs for ViewA, ViewB, & ViewC
@@ -69,7 +72,7 @@ namespace Ekm.Mobile
             containerRegistry.RegisterForNavigation<TabbedPage>();
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage>();
-            containerRegistry.RegisterForNavigation<SplashScreenPage>();
+            //containerRegistry.RegisterForNavigation<SplashScreenPage>();
             containerRegistry.RegisterForNavigation<LoginPage>();
             containerRegistry.RegisterForNavigation<WebPage>();
         }

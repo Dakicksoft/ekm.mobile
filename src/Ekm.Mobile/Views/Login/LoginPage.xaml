@@ -3,6 +3,8 @@
   x:Class="Ekm.Mobile.Views.LoginPage"
   xmlns="http://xamarin.com/schemas/2014/forms"
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+  xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
   xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
   xmlns:views="clr-namespace:Ekm.Mobile.Views"
   Title="Login"
@@ -16,29 +18,29 @@
         HorizontalOptions="FillAndExpand"
         VerticalOptions="CenterAndExpand">
 
-        <!--<Entry
-          Keyboard="Email"
-          Placeholder="User name"
-          Style="{StaticResource entryStyle}"
-          Text="{Binding UserName}" />
-
-        <Entry
-          IsPassword="true"
-          Placeholder="Password"
-          Style="{StaticResource entryStyle}"
-          Text="{Binding Password}" />-->
+        <ffimageloading:CachedImage
+          Aspect="AspectFill"
+          DownsampleToViewSize="true"
+          HeightRequest="100"
+          HorizontalOptions="Center"
+          VerticalOptions="Center"
+          WidthRequest="100">
+          <ffimageloading:CachedImage.Source>
+            <OnPlatform
+              x:TypeArguments="ImageSource"
+              Android="launchscreen_icon.png"
+              iOS="AppIcon.png" />
+          </ffimageloading:CachedImage.Source>
+          <ffimageloading:CachedImage.Transformations>
+            <fftransformations:CircleTransformation />
+          </ffimageloading:CachedImage.Transformations>
+        </ffimageloading:CachedImage>
 
         <Button
           Command="{Binding SignInCommand}"
           Style="{StaticResource PrimaryActionButtonStyle}"
           Text="Sign In"
           VerticalOptions="Center" />
-
-        <ActivityIndicator
-          IsRunning="True"
-          IsVisible="true"
-          VerticalOptions="Center" />
-
       </StackLayout>
 
     </ScrollView>

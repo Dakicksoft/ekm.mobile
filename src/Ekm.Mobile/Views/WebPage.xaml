@@ -6,13 +6,15 @@
   xmlns:controls="clr-namespace:Ekm.Mobile.Controls"
   xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
   xmlns:prismNav="clr-namespace:Prism.Navigation.Xaml;assembly=Prism.Forms"
-  prism:ViewModelLocator.AutowireViewModel="True">
+  prism:ViewModelLocator.AutowireViewModel="True"
+  IsBusy="{Binding IsBusy}">
 
   <ContentPage.Content>
     <Grid BackgroundColor="#000000">
 
       <controls:ExtendedWebView
         HorizontalOptions="FillAndExpand"
+        NavigatedCommand="{Binding NavigatedCommand}"
         NavigatingCommand="{Binding NavigatingCommand}"
         Source="{Binding Url}"
         VerticalOptions="FillAndExpand" />

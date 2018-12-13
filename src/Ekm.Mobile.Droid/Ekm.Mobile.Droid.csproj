@@ -65,6 +65,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Acr.UserDialogs">
+      <Version>7.0.1</Version>
+    </PackageReference>
     <PackageReference Include="BarcodeScanning.Service">
       <Version>1.1.0.286</Version>
     </PackageReference>
@@ -115,7 +118,9 @@
     <AndroidResource Include="Resources\layout\SplashScreen.axml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Properties\AndroidManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="FodyWeavers.xml" />
   </ItemGroup>
   <ItemGroup>

@@ -1,17 +1,14 @@
 using System;
-using System.Collections.Generic;
 using System.Reflection;
 using System.Resources;
-using System.Text;
-using Ekm.Mobile.Resources;
 using Plugin.Multilingual;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Ekm.Mobile.i18n
 {
-  // You exclude the 'Extension' suffix when using in Xaml markup
-  [ContentProperty(nameof(Text))]
+    // You exclude the 'Extension' suffix when using in Xaml markup
+    [ContentProperty(nameof(Text))]
   internal class TranslateExtension : IMarkupExtension
   {
     private const string ResourceId = "Ekm.Mobile.Resources.AppResources";

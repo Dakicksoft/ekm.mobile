@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using System.Threading.Tasks;
 using Prism.Mvvm;
 using Prism;
@@ -11,17 +10,17 @@ namespace Ekm.Mobile.ViewModels
 {
   public class ViewModelBase : BindableBase, IActiveAware, INavigationAware, IDestructible, IConfirmNavigation, IConfirmNavigationAsync, IApplicationLifecycleAware, IPageLifecycleAware
   {
-    protected IPageDialogService _pageDialogService { get; }
+    protected IPageDialogService PageDialogService { get; }
 
-    protected IDeviceService _deviceService { get; }
+    protected IDeviceService DeviceService { get; }
 
     protected INavigationService _navigationService { get; }
 
     public ViewModelBase(INavigationService navigationService, IPageDialogService pageDialogService,
                          IDeviceService deviceService)
     {
-      _pageDialogService = pageDialogService;
-      _deviceService = deviceService;
+      PageDialogService = pageDialogService;
+      DeviceService = deviceService;
       _navigationService = navigationService;
     }
 

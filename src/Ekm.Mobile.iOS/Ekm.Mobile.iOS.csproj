@@ -223,6 +223,9 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Acr.UserDialogs">
+      <Version>7.0.1</Version>
+    </PackageReference>
     <PackageReference Include="BarcodeScanning.Service">
       <Version>1.1.0.286</Version>
     </PackageReference>

@@ -8,12 +8,9 @@
   xmlns:i18n="clr-namespace:Ekm.Mobile.i18n;assembly=Ekm.Mobile"
   xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
   xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core"
-  Title="{Binding Title}">
+  Title="{i18n:Translate LoadingText}">
   <StackLayout Margin="0">
     <!--  WebView needs to be given height and width request within layouts to render.  -->
-    <WebView
-      x:Name="TheWebView"
-      HorizontalOptions="FillAndExpand"
-      VerticalOptions="FillAndExpand" />
+    <Label Text="{i18n:Translate LoadingText}" TextColor="{StaticResource Accent}" />
   </StackLayout>
 </ContentPage>

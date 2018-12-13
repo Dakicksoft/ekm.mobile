@@ -1,4 +1,5 @@
-﻿using Android.App;
+﻿using Acr.UserDialogs;
+using Android.App;
 using Android.Content.PM;
 using Android.OS;
 
@@ -24,7 +25,7 @@ namespace Ekm.Mobile.Droid
             global::FFImageLoading.ImageService.Instance.Initialize();
             SQLitePCL.Batteries_V2.Init();
             SQLitePCL.raw.FreezeProvider();
-
+            UserDialogs.Init(this);
             global::ZXing.Net.Mobile.Forms.Android.Platform.Init();
 
             LoadApplication(new App(new AndroidInitializer()));
