@@ -21,10 +21,10 @@
         <ffimageloading:CachedImage
           Aspect="AspectFill"
           DownsampleToViewSize="true"
-          HeightRequest="100"
+          HeightRequest="130"
           HorizontalOptions="Center"
           VerticalOptions="Center"
-          WidthRequest="100">
+          WidthRequest="230">
           <ffimageloading:CachedImage.Source>
             <OnPlatform
               x:TypeArguments="ImageSource"

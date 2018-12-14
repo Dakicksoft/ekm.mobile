@@ -3,7 +3,6 @@
   x:Class="Ekm.Mobile.Views.SplashScreenPage"
   xmlns="http://xamarin.com/schemas/2014/forms"
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-  xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
   xmlns:i18n="clr-namespace:Ekm.Mobile.i18n;assembly=Ekm.Mobile"
   xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
   prism:ViewModelLocator.AutowireViewModel="True"
@@ -12,10 +11,10 @@
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
       <Image
         Aspect="AspectFit"
-        HeightRequest="100"
+        HeightRequest="130"
         HorizontalOptions="Center"
         VerticalOptions="Center"
-        WidthRequest="100">
+        WidthRequest="230">
         <Image.Source>
           <OnPlatform
             x:TypeArguments="ImageSource"

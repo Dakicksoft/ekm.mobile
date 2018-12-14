@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Ekm.Mobile.Extensions;
 using Ekm.Mobile.Services.Dialog;
 using Prism.Commands;
@@ -47,15 +49,46 @@ namespace Ekm.Mobile.ViewModels
         #region Methods
         private async Task ExecuteNavigating(object obj)
         {
-            base.IsBusy = true;
-
-            _dialogService.ShowLoading("", Acr.UserDialogs.MaskType.Black);
-
-            var args = (Xamarin.Forms.WebNavigatingEventArgs)obj;
-
-            if (args.Url.StartsWith(Helpers.AppConstants.RedirectUri))
+            try
             {
-                await base._navigationService.GoBackAsync(useModalNavigation: true);
+                base.IsBusy = true;
+
+                _dialogService.ShowLoading("", Acr.UserDialogs.MaskType.Black);
+
+                var args = (Xamarin.Forms.WebNavigatingEventArgs)obj;
+
+                if (args.Url.StartsWith(Helpers.AppConstants.RedirectUri))
+                {
+
+                    var uri = new Uri(args.Url);
+
+                    var splitQuery = uri.Query.TrimStart('?').Split('&');
+                    var queryString = new Dictionary<string, string>();
+
+                    foreach (var item in splitQuery)
+                    {
+                        var splitItem = item.Split('=');
+                        var itemKey = splitItem[0];
+                        var itemValue = splitItem.Length > 1 ? splitItem[1] : string.Empty;
+
+                        if (!queryString.ContainsKey(itemKey))
+                        {
+                            queryString.Add(itemKey, itemValue);
+                        }
+                    }
+
+                    var code = queryString["code"];
+
+                    await Helpers.SecureStorage.Save(Helpers.StorageKey.AuthorizationCode, code)
+                                               .ConfigureAwait(false);
+
+                    await base._navigationService.GoBackAsync(useModalNavigation: true);
+                }
+            }
+            finally
+            {
+                _dialogService.HideLoading();
+                base.IsBusy = false;
             }
         }
 
