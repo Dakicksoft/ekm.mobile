@@ -61,5 +61,18 @@ namespace Ekm.Mobile.Helpers
                 "Read your account details."
             }
         };
+
+        //App Center
+        public const string AppCenterAndroidSecret = "714137f0-dbdc-4d74-9701-f964a51c4532";
+        public const string AppCenteriOSSecret = "da30ddc9-b2c4-4464-bd6a-2ebf580a673d";
+
+        public static bool UseDebugLogging = DebugMode;
+
+        public const bool DebugMode =
+#if DEBUG
+            true;
+#else
+            false;
+#endif
     }
 }

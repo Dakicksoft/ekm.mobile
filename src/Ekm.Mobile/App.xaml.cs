@@ -30,6 +30,8 @@ namespace Ekm.Mobile
         public App(IPlatformInitializer initializer)
             : this(initializer, false)
         {
+
+
         }
 
         public App(IPlatformInitializer initializer, bool setFormsDependencyResolver)
@@ -53,6 +55,19 @@ namespace Ekm.Mobile
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+
+            if (Helpers.AppConstants.UseDebugLogging)
+            {
+                containerRegistry.Register<Logging.ILoggingService, Logging.DebugLoggingService>();
+            }
+            else
+            {
+                containerRegistry.Register<Logging.ILoggingService, Logging.AppCenterLoggingService>();
+            }
+
+            containerRegistry.Register<Services.Connectivity.IConnectivityService, Services.Connectivity.ConnectivityService>();
+
+
             // Register the Popup Plugin Navigation Service
             containerRegistry.RegisterPopupNavigationService();
 
@@ -80,6 +95,9 @@ namespace Ekm.Mobile
         protected override void OnStart()
         {
             // Handle when your app starts
+
+            Microsoft.AppCenter.AppCenter.Start($"android={Helpers.AppConstants.AppCenterAndroidSecret}; ios={Helpers.AppConstants.AppCenteriOSSecret}",
+                 typeof(Microsoft.AppCenter.Analytics.Analytics), typeof(Microsoft.AppCenter.Crashes.Crashes));
         }
 
         protected override void OnSleep()

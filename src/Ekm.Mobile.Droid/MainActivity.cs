@@ -17,6 +17,9 @@ namespace Ekm.Mobile.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
+
+            InitRenderersAndServices(savedInstanceState);
+
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.SetFlags("FastRenderers_Experimental");
@@ -39,6 +42,11 @@ namespace Ekm.Mobile.Droid
                       .Android
                       .PermissionsHandler
                       .OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        private void InitRenderersAndServices(Bundle savedInstanceState)
+        {
+          
         }
     }
 }

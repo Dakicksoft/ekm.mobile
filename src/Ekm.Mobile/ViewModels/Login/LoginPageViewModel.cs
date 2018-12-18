@@ -11,5 +11,12 @@ namespace Ekm.Mobile.ViewModels
         }
         public DelegateCommand SignInCommand => new DelegateCommand(async () => await base._navigationService.NavigateAsync(Screens.WebPage, useModalNavigation: true));
 
+
+        public override async void OnNavigatedTo(INavigationParameters parameters)
+        {
+            await System.Threading.Tasks.Task.Delay(4000);
+
+            await base.XSnackService.ShowMessageAsync("Deneme meneme meneme");
+        }
     }
 }

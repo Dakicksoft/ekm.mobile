@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Prism;
+﻿using Prism;
 using Prism.Ioc;
 
 namespace Ekm.Mobile.iOS
 {
-  public class iOSInitializer : IPlatformInitializer
-  {
-    public void RegisterTypes(IContainerRegistry containerRegistry)
+    public class iOSInitializer : IPlatformInitializer
     {
-      // Register Any Platform Specific Implementations that you cannot 
-      // access from Shared Code
+        public void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+            // Register Any Platform Specific Implementations that you cannot 
+            // access from Shared Code
+            containerRegistry.Register<Plugin.XSnack.IXSnack, Plugin.XSnack.XSnackImplementation>();
+        }
     }
-  }
 }
