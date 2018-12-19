@@ -121,6 +121,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="iOSInitializer.cs" />
+    <Compile Include="Renderers\iOSMaterialFrameRenderer.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <None Include="FodyWeavers.xml" />
