@@ -50,7 +50,7 @@ namespace Ekm.Mobile
             LogUnobservedTaskExceptions();
             AppResources.Culture = CrossMultilingual.Current.DeviceCultureInfo;
 
-            await NavigationService.NavigateAsync(Screens.SplashScreenPage);
+            await NavigationService.NavigateAsync(Screens.LoginPage);
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -71,9 +71,11 @@ namespace Ekm.Mobile
             // Register the Popup Plugin Navigation Service
             containerRegistry.RegisterPopupNavigationService();
 
-            // NOTE: Uses a Popup Page to contain the Scanner. You can optionally register 
+            // NOTE: Uses a Popup Page to contain the Scanner. You can optionally register
             // the ContentPageBarcodeScannerService if you prefer a full screen approach.
             containerRegistry.RegisterSingleton<IBarcodeScannerService, PopupBarcodeScannerService>();
+
+            containerRegistry.RegisterSingleton<Services.Authentication.IAuthenticate, Services.Authentication.AuthenticationProvider>();
 
             containerRegistry.RegisterSingleton<Services.RequestProvider.IRequestProvider, Services.RequestProvider.RequestProvider>();
 

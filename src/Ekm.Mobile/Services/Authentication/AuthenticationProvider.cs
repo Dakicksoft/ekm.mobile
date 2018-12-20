@@ -15,10 +15,13 @@ namespace Ekm.Mobile.Services.Authentication
         private readonly HttpClient httpClient;
         public AuthenticationProvider()
         {
-            httpClient = new HttpClient(new HttpClientHandler
+            if (httpClient == null)
             {
-                AutomaticDecompression = DecompressionMethods.GZip,
-            });
+                httpClient = new HttpClient(new HttpClientHandler
+                {
+                    AutomaticDecompression = DecompressionMethods.GZip,
+                });
+            }
 
             httpClient.DefaultRequestHeaders.AcceptEncoding.Add(new StringWithQualityHeaderValue("gzip"));
 
@@ -39,11 +42,13 @@ namespace Ekm.Mobile.Services.Authentication
             };
             var uri = builder.ToString();
 
+            var code = await Helpers.SecureStorage.Get(Helpers.StorageKey.AuthorizationCode).ConfigureAwait(false);
+
             var encodedContent = new FormUrlEncodedContent(new[]
             {
                 new KeyValuePair<string, string>("client_id",Helpers.AppConstants.ClientKey),
                 new KeyValuePair<string, string>("client_secret",Helpers.AppConstants.ClientSecret),
-                new KeyValuePair<string, string>("code",""),
+                new KeyValuePair<string, string>("code",code),
                 new KeyValuePair<string, string>("grant_type","authorization_code"),
                 new KeyValuePair<string, string>("redirect_uri",Helpers.AppConstants.RedirectUri)
             });
