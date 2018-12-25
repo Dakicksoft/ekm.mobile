@@ -33,9 +33,9 @@ namespace Ekm.Mobile.ViewModels
 
         public override async void OnNavigatedTo(INavigationParameters parameters)
         {
-            var code = await Helpers.SecureStorage.Get(Helpers.StorageKey.AuthorizationCode).ConfigureAwait(false);
+            var code = await Helpers.SecureStorage.Get(Helpers.StorageKey.AuthorizationCode);
 
-            if (code.IsNullOrEmpty())
+            if (!code.IsNullOrEmpty())
             {
                 var token = await _authenticate.Token().ConfigureAwait(false);
             }

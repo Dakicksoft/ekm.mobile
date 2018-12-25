@@ -50,7 +50,7 @@ namespace Ekm.Mobile
             LogUnobservedTaskExceptions();
             AppResources.Culture = CrossMultilingual.Current.DeviceCultureInfo;
 
-            await NavigationService.NavigateAsync(Screens.LoginPage);
+            await NavigationService.NavigateAsync(Screens.SplashScreenPage);
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

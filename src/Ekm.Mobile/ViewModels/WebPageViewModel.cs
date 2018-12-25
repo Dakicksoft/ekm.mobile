@@ -79,8 +79,7 @@ namespace Ekm.Mobile.ViewModels
 
                     var code = queryString["code"];
 
-                    await Helpers.SecureStorage.Save(Helpers.StorageKey.AuthorizationCode, code)
-                                               .ConfigureAwait(false);
+                    await Helpers.SecureStorage.Save(Helpers.StorageKey.AuthorizationCode, code);
 
                     await base._navigationService.GoBackAsync(useModalNavigation: true);
                 }

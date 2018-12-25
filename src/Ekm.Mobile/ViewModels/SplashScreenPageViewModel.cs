@@ -44,6 +44,7 @@ namespace Ekm.Mobile.ViewModels
             // After performing the long running task we perform an absolute Navigation to remove the SplashScreen from
             // the Navigation Stack.
             //await _navigationService.NavigateAsync("/NavigationPage/MainPage");
+
             await _navigationService.NavigateAsync(Screens.LoginPage);
         }
 

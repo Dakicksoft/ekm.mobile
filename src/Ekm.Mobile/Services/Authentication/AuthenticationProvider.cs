@@ -25,8 +25,8 @@ namespace Ekm.Mobile.Services.Authentication
 
             httpClient.DefaultRequestHeaders.AcceptEncoding.Add(new StringWithQualityHeaderValue("gzip"));
 
-            httpClient.DefaultRequestHeaders.Add("content-type", "application/x-www-form-urlencoded");
-            httpClient.DefaultRequestHeaders.Add("Cache-Control", "no-cache");
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded"));
+            //httpClient.DefaultRequestHeaders.Add("Cache-Control", "no-cache");
         }
 
         public Task<Auth> Refresh()
