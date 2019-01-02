@@ -1,5 +1,6 @@
 ﻿using Ekm.Mobile.Extensions;
 using Ekm.Mobile.Services.Authentication;
+using Ekm.Mobile.Services.Cache;
 using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;

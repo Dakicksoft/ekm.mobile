@@ -17,10 +17,9 @@ namespace Ekm.Mobile.iOS
             global::Rg.Plugins.Popup.Popup.Init();
             global::FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
             global::FFImageLoading.ImageService.Instance.Initialize();
-            SQLitePCL.Batteries_V2.Init();
-            SQLitePCL.raw.FreezeProvider();
+            //SQLitePCL.Batteries_V2.Init();
+            //SQLitePCL.raw.FreezeProvider();
             global::ZXing.Net.Mobile.Forms.iOS.Platform.Init();
-            UserDialogs.Init(this);
             // Code for starting up the Xamarin Test Cloud Agent
 #if !APPSTORE_RELEASE
             Xamarin.Calabash.Start();

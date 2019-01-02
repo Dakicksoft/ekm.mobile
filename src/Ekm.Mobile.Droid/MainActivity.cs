@@ -46,8 +46,8 @@ namespace Ekm.Mobile.Droid
 
             global::FFImageLoading.Forms.Platform.CachedImageRenderer.Init(enableFastRenderer: true);
             global::FFImageLoading.ImageService.Instance.Initialize();
-            SQLitePCL.Batteries_V2.Init();
-            SQLitePCL.raw.FreezeProvider();
+            //SQLitePCL.Batteries_V2.Init();
+            //SQLitePCL.raw.FreezeProvider();
             UserDialogs.Init(this);
             global::ZXing.Net.Mobile.Forms.Android.Platform.Init();
         }
