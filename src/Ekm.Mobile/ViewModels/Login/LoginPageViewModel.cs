@@ -16,7 +16,7 @@ namespace Ekm.Mobile.ViewModels
 
         #region Ctor
 
-        public LoginPageViewModel(IAuthenticate authenticate,INavigationService navigationService, IPageDialogService pageDialogService, IDeviceService deviceService) : base(navigationService, pageDialogService, deviceService)
+        public LoginPageViewModel(IAuthenticate authenticate, INavigationService navigationService, IPageDialogService pageDialogService, IDeviceService deviceService) : base(navigationService, pageDialogService, deviceService)
         {
             _authenticate = authenticate;
         }
@@ -33,11 +33,11 @@ namespace Ekm.Mobile.ViewModels
 
         public override async void OnNavigatedTo(INavigationParameters parameters)
         {
-            var code = await Helpers.SecureStorage.Get(Helpers.StorageKey.AuthorizationCode);
+            var code = await Xamarin.Essentials.SecureStorage.GetAsync(Helpers.StorageKey.AuthorizationCode);
 
             if (!code.IsNullOrEmpty())
             {
-                var token = await _authenticate.Token().ConfigureAwait(false);
+                var token = await base.TryExecuteWithLoadingIndicatorsAsync<Auth>(_authenticate.Token());
             }
         }
 

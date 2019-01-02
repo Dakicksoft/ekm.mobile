@@ -59,7 +59,6 @@ namespace Ekm.Mobile.ViewModels
 
                 if (args.Url.StartsWith(Helpers.AppConstants.RedirectUri))
                 {
-
                     var uri = new Uri(args.Url);
 
                     var splitQuery = uri.Query.TrimStart('?').Split('&');
@@ -79,7 +78,7 @@ namespace Ekm.Mobile.ViewModels
 
                     var code = queryString["code"];
 
-                    await Helpers.SecureStorage.Save(Helpers.StorageKey.AuthorizationCode, code);
+                    await Xamarin.Essentials.SecureStorage.SetAsync(Helpers.StorageKey.AuthorizationCode, code);
 
                     await base._navigationService.GoBackAsync(useModalNavigation: true);
                 }

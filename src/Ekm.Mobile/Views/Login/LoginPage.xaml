@@ -9,7 +9,8 @@
   xmlns:views="clr-namespace:Ekm.Mobile.Views"
   Title="Login"
   prism:ViewModelLocator.AutowireViewModel="True"
-  BackgroundColor="WhiteSmoke">
+  BackgroundColor="WhiteSmoke" 
+  IsBusy="{Binding IsBusy}">
   <ContentPage.Content>
     <ScrollView BackgroundColor="Transparent">
 

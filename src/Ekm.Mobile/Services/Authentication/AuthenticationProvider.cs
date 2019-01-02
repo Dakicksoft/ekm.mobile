@@ -17,16 +17,11 @@ namespace Ekm.Mobile.Services.Authentication
         {
             if (httpClient == null)
             {
-                httpClient = new HttpClient(new HttpClientHandler
-                {
-                    AutomaticDecompression = DecompressionMethods.GZip,
-                });
+                httpClient = new HttpClient();
             }
 
-            httpClient.DefaultRequestHeaders.AcceptEncoding.Add(new StringWithQualityHeaderValue("gzip"));
-
+            httpClient.DefaultRequestHeaders.Add("Cache-Control", "no-cache");
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded"));
-            //httpClient.DefaultRequestHeaders.Add("Cache-Control", "no-cache");
         }
 
         public Task<Auth> Refresh()
@@ -36,13 +31,24 @@ namespace Ekm.Mobile.Services.Authentication
 
         public async Task<Auth> Token()
         {
+            var code = await Xamarin.Essentials.SecureStorage.GetAsync(Helpers.StorageKey.AuthorizationCode).ConfigureAwait(false);
+
+            var requestBodyParams = new List<string>
+            {
+                $"client_id={Helpers.AppConstants.ClientKey}",
+                $"client_secret={Helpers.AppConstants.ClientSecret}",
+                $"code={code}",
+                "grant_type=authorization_code",
+                $"redirect_uri={Helpers.AppConstants.RedirectUri}"
+            };
+
+
             var builder = new UriBuilder(Helpers.AppConstants.GatewayUrl)
             {
-                Path = $"connect/token",
+                Path ="",
             };
             var uri = builder.ToString();
 
-            var code = await Helpers.SecureStorage.Get(Helpers.StorageKey.AuthorizationCode).ConfigureAwait(false);
 
             var encodedContent = new FormUrlEncodedContent(new[]
             {

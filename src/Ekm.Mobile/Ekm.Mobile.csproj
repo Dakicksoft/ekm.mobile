@@ -8,9 +8,9 @@
 
   <ItemGroup>
     <PackageReference Include="Acr.UserDialogs" Version="7.0.1" />
-    <PackageReference Include="akavache" Version="6.1.3" />
-    <PackageReference Include="akavache.core" Version="6.1.3" />
-    <PackageReference Include="akavache.sqlite3" Version="6.1.3" />
+    <PackageReference Include="akavache" Version="6.2.3" />
+    <PackageReference Include="akavache.core" Version="6.2.3" />
+    <PackageReference Include="akavache.sqlite3" Version="6.2.3" />
     <PackageReference Include="BarcodeScanning.Service" Version="1.1.0.286" />
     <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
     <PackageReference Include="codecracker.CSharp" Version="1.1.0">
@@ -35,7 +35,7 @@
     <PackageReference Include="Mobile.BuildTools" Version="1.4.0.638" PrivateAssets="all" />
     <PackageReference Include="Prism.QuickStart.MFractor.Config" Version="1.0.3" PrivateAssets="all" />
     <PackageReference Include="LiveXAML" Version="2.1.58" />
-    <PackageReference Include="SQLitePCLRaw.bundle_sqlcipher" Version="1.1.11" />
+    <PackageReference Include="SQLitePCLRaw.bundle_sqlcipher" Version="1.1.12" />
   </ItemGroup>
 
   <ItemGroup>
