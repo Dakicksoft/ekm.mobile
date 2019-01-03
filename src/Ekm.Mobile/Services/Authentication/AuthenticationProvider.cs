@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading.Tasks;
+using Ekm.Mobile.Extensions;
 using Ekm.Mobile.Services.RequestProvider;
 using Newtonsoft.Json;
 
@@ -33,19 +33,9 @@ namespace Ekm.Mobile.Services.Authentication
         {
             var code = await Xamarin.Essentials.SecureStorage.GetAsync(Helpers.StorageKey.AuthorizationCode).ConfigureAwait(false);
 
-            var requestBodyParams = new List<string>
-            {
-                $"client_id={Helpers.AppConstants.ClientKey}",
-                $"client_secret={Helpers.AppConstants.ClientSecret}",
-                $"code={code}",
-                "grant_type=authorization_code",
-                $"redirect_uri={Helpers.AppConstants.RedirectUri}"
-            };
-
-
             var builder = new UriBuilder(Helpers.AppConstants.GatewayUrl)
             {
-                Path ="",
+                Path = "connect/token",
             };
             var uri = builder.ToString();
 
@@ -54,7 +44,7 @@ namespace Ekm.Mobile.Services.Authentication
             {
                 new KeyValuePair<string, string>("client_id",Helpers.AppConstants.ClientKey),
                 new KeyValuePair<string, string>("client_secret",Helpers.AppConstants.ClientSecret),
-                new KeyValuePair<string, string>("code",code),
+                new KeyValuePair<string, string>(nameof(code),code),
                 new KeyValuePair<string, string>("grant_type","authorization_code"),
                 new KeyValuePair<string, string>("redirect_uri",Helpers.AppConstants.RedirectUri)
             });
@@ -63,9 +53,8 @@ namespace Ekm.Mobile.Services.Authentication
 
             await HandleResponse(response);
 
-            string serialized = await response.Content.ReadAsStringAsync();
+            var data = await response.Content.ReadAsJsonAsync<Auth>();
 
-            dynamic data = JsonConvert.DeserializeObject(serialized);
 
             return null;
             //return new Auth
