@@ -1,6 +1,6 @@
 ﻿using Ekm.Mobile.Extensions;
 using Ekm.Mobile.Services.Authentication;
-using Ekm.Mobile.Services.Cache;
+using Ekm.Mobile.Services.SecureStrorage;
 using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;
@@ -12,14 +12,21 @@ namespace Ekm.Mobile.ViewModels
         #region Fields
 
         private readonly IAuthenticate _authenticate;
+        private readonly ISecuredStorageWrapper _securedStorageWrapper;
 
         #endregion Fields
 
         #region Ctor
 
-        public LoginPageViewModel(IAuthenticate authenticate, INavigationService navigationService, IPageDialogService pageDialogService, IDeviceService deviceService) : base(navigationService, pageDialogService, deviceService)
+        public LoginPageViewModel(IAuthenticate authenticate, 
+                                  INavigationService navigationService, 
+                                  IPageDialogService pageDialogService,
+                                  ISecuredStorageWrapper securedStorageWrapper,
+                                  IDeviceService deviceService) : 
+                                  base(navigationService, pageDialogService, deviceService)
         {
             _authenticate = authenticate;
+            _securedStorageWrapper = securedStorageWrapper;
         }
 
         #endregion Ctor
@@ -34,7 +41,7 @@ namespace Ekm.Mobile.ViewModels
 
         public override async void OnNavigatedTo(INavigationParameters parameters)
         {
-            var code = await Xamarin.Essentials.SecureStorage.GetAsync(Helpers.StorageKey.AuthorizationCode);
+            var code = await _securedStorageWrapper.GetAuthorizationCode();
 
             if (!code.IsNullOrEmpty())
             {

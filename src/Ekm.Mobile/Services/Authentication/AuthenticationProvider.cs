@@ -6,7 +6,6 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Ekm.Mobile.Extensions;
 using Ekm.Mobile.Services.RequestProvider;
-using Newtonsoft.Json;
 
 namespace Ekm.Mobile.Services.Authentication
 {
@@ -31,7 +30,7 @@ namespace Ekm.Mobile.Services.Authentication
 
         public async Task<Auth> Token()
         {
-            var code = await Xamarin.Essentials.SecureStorage.GetAsync(Helpers.StorageKey.AuthorizationCode).ConfigureAwait(false);
+            var code = await Xamarin.Essentials.SecureStorage.GetAsync(SecureStrorage.StorageKey.AuthorizationCode).ConfigureAwait(false);
 
             var builder = new UriBuilder(Helpers.AppConstants.GatewayUrl)
             {

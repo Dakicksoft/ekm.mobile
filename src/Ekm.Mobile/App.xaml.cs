@@ -67,7 +67,6 @@ namespace Ekm.Mobile
 
             containerRegistry.Register<Services.Connectivity.IConnectivityService, Services.Connectivity.ConnectivityService>();
 
-
             // Register the Popup Plugin Navigation Service
             containerRegistry.RegisterPopupNavigationService();
 
@@ -79,9 +78,12 @@ namespace Ekm.Mobile
 
             containerRegistry.RegisterSingleton<Services.RequestProvider.IRequestProvider, Services.RequestProvider.RequestProvider>();
 
-            containerRegistry.RegisterInstance<Prism.Events.IEventAggregator>(new Prism.Events.EventAggregator());
+            containerRegistry.RegisterSingleton<Services.SecureStrorage.ISecuredStorageWrapper, Services.SecureStrorage.SecuredStorageWrapper>();
 
             containerRegistry.RegisterSingleton<Services.Dialog.IDialogService, Services.Dialog.DialogService>();
+
+            containerRegistry.RegisterInstance<Prism.Events.IEventAggregator>(new Prism.Events.EventAggregator());
+
 
             // Navigating to "TabbedPage?createTab=ViewA&createTab=ViewB&createTab=ViewC will generate a TabbedPage
             // with three tabs for ViewA, ViewB, & ViewC

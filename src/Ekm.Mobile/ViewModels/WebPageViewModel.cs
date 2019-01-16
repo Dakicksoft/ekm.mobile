@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Ekm.Mobile.Extensions;
 using Ekm.Mobile.Services.Dialog;
+using Ekm.Mobile.Services.SecureStrorage;
 using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;
@@ -18,6 +19,7 @@ namespace Ekm.Mobile.ViewModels
         #region Fields
 
         private readonly IDialogService _dialogService;
+        private readonly ISecuredStorageWrapper _securedStorageWrapper;
 
         #endregion Fields
 
@@ -31,7 +33,6 @@ namespace Ekm.Mobile.ViewModels
         }
 
         #endregion Ctor
-
 
         #region Commands
         public DelegateCommand<object> NavigatingCommand => new DelegateCommand<object>(async (obj) => await ExecuteNavigating(obj));
@@ -53,7 +54,7 @@ namespace Ekm.Mobile.ViewModels
             {
                 base.IsBusy = true;
 
-                _dialogService.ShowLoading("", Acr.UserDialogs.MaskType.Black);
+                _dialogService.ShowLoading(maskType: Acr.UserDialogs.MaskType.Black);
 
                 var args = (Xamarin.Forms.WebNavigatingEventArgs)obj;
 
@@ -78,7 +79,7 @@ namespace Ekm.Mobile.ViewModels
 
                     var code = queryString["code"];
 
-                    await Xamarin.Essentials.SecureStorage.SetAsync(Helpers.StorageKey.AuthorizationCode, code);
+                    await _securedStorageWrapper.SetAuthorizationCode(code);
 
                     await base._navigationService.GoBackAsync(useModalNavigation: true);
                 }
