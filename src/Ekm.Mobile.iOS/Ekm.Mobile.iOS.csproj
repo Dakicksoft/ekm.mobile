@@ -228,13 +228,13 @@
       <Version>7.0.1</Version>
     </PackageReference>
     <PackageReference Include="akavache">
-      <Version>6.3.2</Version>
+      <Version>6.3.6</Version>
     </PackageReference>
     <PackageReference Include="akavache.core">
-      <Version>6.3.2</Version>
+      <Version>6.3.6</Version>
     </PackageReference>
     <PackageReference Include="akavache.sqlite3">
-      <Version>6.3.2</Version>
+      <Version>6.3.6</Version>
     </PackageReference>
     <PackageReference Include="BarcodeScanning.Service">
       <Version>1.1.0.286</Version>
@@ -265,7 +265,7 @@
     <PackageReference Include="PropertyChanged.Fody" Version="2.6.0" PrivateAssets="all" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="7.1.0.431" />
     <PackageReference Include="Prism.Plugin.Popups" Version="2.2.0.293" />
-    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1029999" />
+    <PackageReference Include="Xamarin.Forms" Version="3.5.0.169047" />
     <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
     <PackageReference Include="Xamarin.TestCloud.Agent" Version="0.21.7" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.4.859" />

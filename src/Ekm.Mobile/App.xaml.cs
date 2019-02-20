@@ -48,6 +48,7 @@ namespace Ekm.Mobile
 #endif
 
             LogUnobservedTaskExceptions();
+
             AppResources.Culture = CrossMultilingual.Current.DeviceCultureInfo;
 
             await NavigationService.NavigateAsync(Screens.SplashScreenPage);
