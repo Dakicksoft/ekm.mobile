@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2050
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ekm.Mobile", "src\Ekm.Mobile\Ekm.Mobile.csproj", "{4F852AE4-1CBC-44D8-9990-0C7A2C653A5A}"
 EndProject
@@ -30,7 +30,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{CF068E52
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ekm.Mobile.UnitTests", "tests\Ekm.Mobile.UnitTests\Ekm.Mobile.UnitTests.csproj", "{183C9F27-DCB3-4B52-A3D3-9B33F26E0DBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ekm.Mobile.Console", "tests\Ekm.Mobile.Console\Ekm.Mobile.Console.csproj", "{75FE19D9-010A-4003-9AC6-5ED9CFA746AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ekm.Mobile.Console", "tests\Ekm.Mobile.Console\Ekm.Mobile.Console.csproj", "{75FE19D9-010A-4003-9AC6-5ED9CFA746AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

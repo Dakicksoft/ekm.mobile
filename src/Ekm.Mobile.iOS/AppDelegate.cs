@@ -13,7 +13,12 @@ namespace Ekm.Mobile.iOS
     {
         public override bool FinishedLaunching(UIApplication uiApplication, NSDictionary launchOptions)
         {
+            SQLitePCL.Batteries_V2.Init();
+
             global::Xamarin.Forms.Forms.Init();
+
+            XF.Material.iOS.Material.Init();
+            Lottie.Forms.iOS.Renderers.AnimationViewRenderer.Init();
             global::Rg.Plugins.Popup.Popup.Init();
             global::FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
             global::FFImageLoading.ImageService.Instance.Initialize();

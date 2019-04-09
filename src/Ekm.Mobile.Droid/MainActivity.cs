@@ -41,12 +41,14 @@ namespace Ekm.Mobile.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.SetFlags("FastRenderers_Experimental");
+            SQLitePCL.Batteries_V2.Init();
 
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
+            XF.Material.Droid.Material.Init(this, savedInstanceState);
             global::FFImageLoading.Forms.Platform.CachedImageRenderer.Init(enableFastRenderer: true);
             global::FFImageLoading.ImageService.Instance.Initialize();
-            //SQLitePCL.Batteries_V2.Init();
+            Lottie.Forms.Droid.AnimationViewRenderer.Init();
             //SQLitePCL.raw.FreezeProvider();
             UserDialogs.Init(this);
             global::ZXing.Net.Mobile.Forms.Android.Platform.Init();
